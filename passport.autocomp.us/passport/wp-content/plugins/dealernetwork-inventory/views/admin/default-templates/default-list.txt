@@ -1,0 +1,103 @@
+<div id="dn-inv-left">
+   <p>[carlist-count] Vehicles Found</p>
+   [carlist-search]
+   [carlist-filters]
+   <h4>Refine Your Search</h4>
+   [carlist-refine-year title="Years"]
+   [carlist-refine-make title="Makes"]
+   [carlist-refine-model title="Models" collapsed="true"]
+   [carlist-refine-pricerange title="Price Range" step="10000" max="1000000" prefix="R"]
+   [carlist-refine-citympgrange title="MPG Range" step="10" max="150"]
+</div>
+<div id="dn-inv-right">
+<div id="dn-inv-sort">
+   <div style="float:left;">[carlist-sort]</div>
+   <div style="float:right;">[carlist-rpp]</div>
+   <div style="clear:both;"></div>
+</div>
+<div id="dn-inv-cars">
+[carlist-loop]
+   <div class="dn-inv-car">
+      <a class="dn-inv-link" href="[car-url]"><span></span></a>
+      <div class="dn-inv">
+         <a href="[car-url]" onclick="viewThisCar(event,'[car-id]')" ><img style="width:107px;height:81px;" src="[car-cover-url]" title="[car-year] [car-make] [car-model]" alt="[car-year] [car-make] [car-model]" /></a>
+         <br />
+         [car-images-count] images
+          <p class="dn-inv-ptag ">
+               <a class="dn-inv-button btn-save-[car-id]"   onclick="saveThisCar(event,'[car-id]')" >
+                 Save This Car!
+               </a>
+               <a class="dn-inv-button btn-price-[car-id]"  onclick="getPriceAlert(event, '[car-id]')"  >
+                  Get Price Alerts
+               </a>
+          </p>
+      </div>
+      <div class="dn-inv">
+         <h4>[car-year] [car-make] [car-model]</h4>
+<ul>
+<li>
+<span class="field">Odometer:</span> [car-mileage] miles
+</li>
+[if "[car-exterior]" != ""]
+<li>
+<span class="field">Exterior:</span> [car-exterior]
+</li>
+[/if]
+[if "[car-interior]" != ""]
+<li>
+<span class="field">Interior:</span> [car-interior]
+</li>
+[/if]
+[if "[car-engine]" != ""]
+<li>
+<span class="field">Engine:</span> [car-engine]
+</li>
+[/if]
+[if "[car-transmission]" != ""]
+<li>
+<span class="field">Transmission:</span> [car-transmission]
+</li>
+[/if]
+[if [car-carfax-hasreport]]
+<li>
+<span class="field">Carfax:</span> <a href="[car-carfax-link]" target="_blank">Report</a>
+</li>
+[/if]
+[if [car-autocheck-hasreport]]
+<li>
+<span class="field">AutoCheck:</span> <a href="[car-autocheck-link]" target="_blank">Report</a>
+</li>
+[/if]
+</ul>
+      </div>
+      <div class="dn-inv-dlr">
+         <h4>
+            [if [user-wholesale]]
+            [if [car-wholesaleprice] > 0]
+            Wholesale Price: $[car-wholesaleprice-formatted]
+            [else]
+            [dealership-nopricetext]
+            [/if]
+            [else]
+            [if [car-internetprice] > 0]
+            Internet Price: $[car-internetprice-formatted]
+            [else]
+            [if [car-price] > 0]
+            Asking Price: $[car-price-formatted]
+            [else]
+            [dealership-nopricetext]
+            [/if]
+            [/if]
+            [/if]
+         </h4>
+         <p>[dealership-address]<br />[dealership-city], [dealership-state] [dealership-zip]</p>
+      </div>
+      <div style="clear:both;"></div>
+   </div>
+[/carlist-loop]
+</div>
+[if [carlist-count]>[carlist-recordsperpage]]
+<div id="dn-inv-pages"></div>
+[/if]
+</div>
+<div style="clear:both;"></div>

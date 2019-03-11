@@ -1,0 +1,1 @@
+jQuery.noConflict();jQuery(function(){jQuery(".tabs").tabs({collapsible:true})});function restoreDefault(elementId,templateFile){jQuery.get("../wp-content/plugins/dealernetwork-inventory/views/admin/default-templates/"+templateFile,function(data){jQuery("#"+elementId).val(data)})};

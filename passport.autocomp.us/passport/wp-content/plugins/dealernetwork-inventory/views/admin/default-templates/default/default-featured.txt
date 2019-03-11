@@ -1,0 +1,10 @@
+ [carlist-loop]
+
+<h3>[car-year] [car-make] [car-model]</h3><br>
+<a href="[car-url]">
+<img src="[car-cover-url]" class="fancyframe"></a>
+<br>[car-description]
+<a href="[car-url]"> Click for more details</a>
+<br><br><br><br>[/carlist-loop]
+
+[featuredlist-count]

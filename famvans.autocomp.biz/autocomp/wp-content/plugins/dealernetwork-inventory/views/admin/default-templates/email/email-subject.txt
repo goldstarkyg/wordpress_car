@@ -1,0 +1,1 @@
+[car-year] [car-make] [car-model] at [dealership-name]

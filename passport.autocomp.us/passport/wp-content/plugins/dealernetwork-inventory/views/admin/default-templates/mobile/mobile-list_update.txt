@@ -1,0 +1,49 @@
+<div>
+    [carlist-search]
+</div>
+<div id="dn-inv-right">
+    <div id="dn-inv-sort">
+        <div style="float:left;">[carlist-sort]</div>
+        <div style="float:right;">[carlist-rpp]</div>
+        <div style="clear:both;"></div>
+    </div>
+    <div id="dn-inv-cars">
+        [carlist-loop]
+            <div class="col-md-4 col-sm-12" style="z-index:300 ;padding:0">
+	        <a href="[car-url]" >
+                <img class="inventory_img"   src="[car-cover-url]" title="[car-year] [car-make] [car-model]" alt="[car-year] [car-make] [car-model]" />
+            </a>
+            </div>
+            <div class="col-md-8 col-sm-12 car-desc" >
+                <div>
+                    <p class="title">[car-year] [car-make] [car-model]</p>
+                    <p>[car-images-count] Photos</p>
+                    <p>
+                        [if [user-wholesale]]
+                        [if [car-wholesaleprice] > 0]
+                        Wholesale Price: $[car-wholesaleprice-formatted]
+                        [else]
+                        [dealership-nopricetext]
+                        [/if]
+                        [else]
+                        [if [car-internetprice] > 0]
+                        Internet Price: $[car-internetprice-formatted]
+                        [else]
+                        [if [car-price] > 0]
+                        Asking Price: $[car-price-formatted]
+                        [else]
+                        [dealership-nopricetext]
+                        [/if]
+                        [/if]
+                        [/if]
+                    </p>
+                </div>
+            </div>
+            </br>
+        [/carlist-loop]
+    </div>
+
+    [if [carlist-count]>[carlist-recordsperpage]]
+    <div class="row" id="dn-inv-pages" ></div>
+    [/if]
+</div>

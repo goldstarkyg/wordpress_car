@@ -1,0 +1,8 @@
+ul.dn-vehicle-info li { list-style: none; margin-left: 0; }
+ul.dn-vehicle-info li span { font-weight: bold; margin-right: 10px; }
+div.gallery{
+max-width: 320px;
+max-height: 240px;
+display: block;
+overflow: hidden;
+}

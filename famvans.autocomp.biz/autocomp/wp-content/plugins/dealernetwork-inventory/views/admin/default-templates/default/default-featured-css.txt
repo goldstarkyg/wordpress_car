@@ -1,0 +1,13 @@
+.fancyframe {
+box-shadow: 2px 2px 10px grey;
+border: 10px solid white;
+border-radius: 2px;
+rotation-point: 0 0;
+rotation:20deg;
+}
+
+h3 {
+font-weight: bold;
+rotation-point:50% 50%;
+rotation:45deg;
+}

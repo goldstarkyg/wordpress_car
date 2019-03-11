@@ -1,0 +1,8 @@
+[03-Oct-2017 17:42:14 UTC] WordPress database error Unknown column 'wp_' in 'field list' for query SELECT wp_
+[03-Oct-2017 17:46:34 UTC] PHP Warning:  sprintf(): Too few arguments in /home/autocompus/passport.autocomp.us/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[03-Oct-2017 17:47:09 UTC] PHP Warning:  sprintf(): Too few arguments in /home/autocompus/passport.autocomp.us/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[03-Oct-2017 17:47:09 UTC] PHP Warning:  sprintf(): Too few arguments in /home/autocompus/passport.autocomp.us/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[03-Oct-2017 17:47:09 UTC] PHP Warning:  sprintf(): Too few arguments in /home/autocompus/passport.autocomp.us/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[03-Oct-2017 17:47:11 UTC] PHP Warning:  sprintf(): Too few arguments in /home/autocompus/passport.autocomp.us/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[03-Oct-2017 17:47:34 UTC] PHP Warning:  sprintf(): Too few arguments in /home/autocompus/passport.autocomp.us/wp-admin/includes/class-bulk-upgrader-skin.php on line 154
+[31-Oct-2017 18:28:42 UTC] PHP Fatal error:  Out of memory (allocated 20709376) (tried to allocate 72 bytes) in /home/autocompus/passport.autocomp.us/wp-content/plugins/dealernetwork-inventory/plugin.php on line 1275

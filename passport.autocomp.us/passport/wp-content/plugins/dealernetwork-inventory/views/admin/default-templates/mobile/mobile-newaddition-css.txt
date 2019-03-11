@@ -1,0 +1,4 @@
+#new{
+height: 28px;
+overflow: hidden;
+}

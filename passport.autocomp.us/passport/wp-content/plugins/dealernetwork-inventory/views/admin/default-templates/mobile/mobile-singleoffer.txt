@@ -1,0 +1,1 @@
+<a class="singleoffer-car" href="[car-url]" title="[car-year] [car-make] [car-model] at $[car-price-formatted]"><img src="[car-cover-url]" width="50" height="28"/>[car-year] [car-make] [car-model]</a>

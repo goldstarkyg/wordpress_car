@@ -1,0 +1,4 @@
+<div id="best">[carlist-loop]
+<p><a class="bestprice-car" href="[car-url]" title="[car-year] [car-make] [car-model] at $[car-price-formatted]"><img src="[car-cover-url]" alt="[car-year] [car-make] [car-model]" width="50" height="28" />[car-year] [car-make] [car-model] at $[car-price-formatted]</a></p>
+[/carlist-loop]
+</div>

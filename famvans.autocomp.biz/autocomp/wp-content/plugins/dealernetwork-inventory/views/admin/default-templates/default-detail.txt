@@ -1,0 +1,140 @@
+<div id="dn-inv-left">
+<h2>[car-year] [car-make] [car-model]</h2>
+[car-gallery]
+ 
+<div class="tabs">
+  <ul>
+    <li><a href="#tabs-1">About This [car-make]</a></li>
+    <li><a href="#tabs-2">Buyer Resources</a></li>
+  </ul>
+  <div id="tabs-1">
+    <div class="vehicle-info">
+    <h3 style="float:left;">[car-year] [car-make] [car-model]</h3>
+      <ul class="vehicle-info" style="float:right;">
+        <li><span>VIN:</span>[car-vin]</li>
+        <li><span>Stock #:</span>[car-stocknumber]</li>
+      </ul>
+    <div style="clear:both;"></div>
+    </div>
+    <div class="vehicle-info">
+    <ul class="vehicle-info" style="float:left;">
+      <li><span>Condition:</span>[car-condition]</li>
+      <li><span>Engine:</span>[car-engine]</li>
+      <li><span>Transmission:</span>[car-transmission]</li>
+      <li><span>Mileage:</span>[car-mileage]</li>
+      <li><span>Drivetrain:</span>[car-drivetype]</li>
+      <li><span>Exterior Color:</span>[car-exterior]</li>
+      <li><span>Interior Color:</span>[car-interior]</li>
+    </ul>
+    <div class="vehicle-mpg-holder">
+       <div class="vehicle-mpg">
+       City MPG: <span>
+       [if [car-citympg] > 0]
+       [car-citympg]
+       [else]
+       N/A
+       [/if]
+       </span>
+       </div>
+       <div class="vehicle-mpg gas-pump"></div>
+       <div class="vehicle-mpg">
+       Hwy MPG: <span>
+       [if [car-hwympg] > 0]
+       [car-hwympg]
+       [else]
+       N/A
+       [/if]
+       </span>
+       </div>
+       <div style="clear: both;">
+           <p class="vehicle-mpg-caption">Actual rating will vary with options, driving conditions, habits and vehicle condition.</p>
+       </div>
+    </div>
+    <div style="clear:both;"></div>
+    </div>
+    <div class="vehicle-info">
+    <h3>Vehicle Overview</h3>
+    [car-description]
+    </div>
+    <div class="vehicle-info">
+    <h3>Contact Information</h3>
+    <img src="https://dealernetwork.com/externalinventory/latest/detail_files/dealership-photo.jpg" alt="Car" style="float: left;margin: 0 25px;" />
+    <div style="float: left;margin: 0 25px;">
+    <h4 style="margin-top:0;">[dealership-name]</h4>
+    <p>[dealership-address]<br />[dealership-city], [dealership-state] [dealership-zip]
+    </div>
+    <div style="float: left;margin: 0 25px;">
+    <h4 style="margin-top:0;">[dealership-phone]</h4>
+    </div>
+    <div style="clear:both;"></div>
+    </div>
+    [if [car-equipment-count] > 0]
+    <div class="vehicle-info">
+    <h3>Features & Options</h3>
+    <ul>
+      [car-equipment-loop]
+        <li>[car-equipment]</li>
+      [/car-equipment-loop]
+    </ul>
+    </div>
+    [/if]
+  </div>
+  <div id="tabs-2">
+    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+  </div>
+</div>
+</div>
+<div id="dn-inv-right">
+<h2>
+            [if [user-wholesale]]
+            [if [car-wholesaleprice] > 0]
+            Wholesale Price: $[car-wholesaleprice-formatted]
+            [else]
+            [dealership-nopricetext]
+            [/if]
+            [else]
+            [if [car-internetprice] > 0]
+            Internet Price: $[car-internetprice-formatted]
+            [else]
+            [if [car-price] > 0]
+            Asking Price: $[car-price-formatted]
+            [else]
+            [dealership-nopricetext]
+            [/if]
+            [/if]
+            [/if]
+</h2>
+<div id="dn-inv-contactinfo">
+<p>Contact us about this vehicle</p>
+<h3>[dealership-phone]</h3>
+</div>
+[car-form-requestinfo title="Request More Info"]
+[car-form-requestinfo title="Request Test Drive"]
+[car-form-requestinfo title="Make Offer"]
+<div class="dn-car-forms">
+   <h4 class="collapsible collapsed">Call Today</h4>
+   <div style="text-align:center;">
+      <p>Contact <span style="font-weight:bold;">[dealership-name]</span> today for more information on this vehicle.</p>
+      <h3>[dealership-phone]</h3>
+      <ul>
+         <li>Monday: [dealership-hours-monday]</li>
+         <li>Tuesday: [dealership-hours-tuesday]</li>
+         <li>Wednesday: [dealership-hours-wednesday]</li>
+         <li>Thursday: [dealership-hours-thursday]</li>
+         <li>Friday: [dealership-hours-friday]</li>
+         <li>Saturday: [dealership-hours-saturday]</li>
+         <li>Sunday: [dealership-hours-sunday]</li>
+      </ul>
+   </div>
+</div>
+<div>
+<h4 style="padding-left:20px;"><a href="[car-appraisal-url]">Trade-In Appraisal</a></h4>
+</div>
+[car-form-emailcar title="Email Car"]
+</div>
+<div style="clear:both;"></div>
+<div id="vehicle-images">
+   [car-images-loop]
+      <a href="[car-image-url]" title="[car-year] [car-make] [car-model]" rel="images1" class="fancybox"><img src="[car-image-url]" alt="[car-year] [car-make] [car-model]" /></a>
+   [/car-images-loop]
+</div>

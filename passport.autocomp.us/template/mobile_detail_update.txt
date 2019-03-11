@@ -1,0 +1,22 @@
+<div >
+  <div class="car-view"><p style="font-size:18px; color:#0a4369">[car-year] [car-make] [car-model]</p></div>
+  <div class="col-md-4 col-sm-12" style="padding:0;z-index:300">[car-gallery]</div>   
+  <div class="col-md-8 col-sm-12" style="padding:0">
+		<div class="thumb-count">[car-images-count] Photos</div> 
+		<div class="car-view">
+			<li calss="car-price" ><span>Price:</span>
+			[if [car-price] > 0]
+			$[car-price-formatted]
+			[else]
+			[dealership-nopricetext]
+			[/if]</li>
+			<li><span>Mileage:</span>[car-mileage]</li>
+			<li><span>Exterior:</span>[car-exterior]</li>
+			<li><span>Interior:</span>[car-interior]</li>
+			<li><span>VIN:</span>[car-vin]</li>
+			<li><span>Stock Number:</span>[car-stocknumber]</li>
+			<li><span>Engine:</span>[car-engine]</li>
+			<li><span>Transmission:</span>[car-transmission]</li>
+		</div>	
+   </div>
+</div>  

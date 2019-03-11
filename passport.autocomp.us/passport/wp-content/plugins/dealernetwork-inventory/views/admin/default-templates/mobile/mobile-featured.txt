@@ -1,0 +1,3 @@
+[carlist-loop]
+   <p><a href="[car-url]"><img src="[car-cover-url]" alt="[car-year] [car-make] [car-model]" width="50" height="28" />[car-year] [car-make] [car-model]</a></p>
+[/carlist-loop]

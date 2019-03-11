@@ -1,0 +1,181 @@
+<?php
+if ($this->car_list != null) {
+	if ($this->mobile_detect->isMobile()) {
+	
+		//---------------------------------------------
+		// variables for website design
+
+		$carouselHeight = 150; //px
+		$carouselWidth = 260; //px
+		$carouselRows = 1;
+		$carouselCollums = 2;
+		$carouselImgMargin = 2;
+		$carouselIntervalSpeed = 4000; //ms  length between each animation
+		$carouselTransitionSpeed = 600; //ms  animation speed
+
+		//---------------------------------------------
+		
+		if ($this->mobile_detect->isTablet()) {
+			//---------------------------------------------
+			// variables for website design
+			$carouselHeight = 200; //px
+			$carouselWidth = 700; //px
+			$carouselRows = 1;
+			$carouselCollums = 4;
+			$carouselImgMargin = 2;
+			$carouselIntervalSpeed = 4000; //ms  length between each animation
+			$carouselTransitionSpeed = 600; //ms  animation speed
+			//---------------------------------------------
+		}
+		
+	} 
+	
+	else {
+		$template = $this->settings['CarouselTemplate'];
+		$css = $this->settings['CarouselTemplateCSS'];
+		//---------------------------------------------
+		// variables for website design
+
+		$carouselHeight = 200; //px
+		$carouselWidth = 900; //px
+		$carouselRows = 1;
+		$carouselCollums = 5;
+		$carouselImgMargin = 2;
+		$carouselIntervalSpeed = 4000; //ms  length between each animation
+		$carouselTransitionSpeed = 600; //ms  animation speed
+
+		//---------------------------------------------
+	}
+
+$carouselImgHeight = (int) ((($carouselHeight - 75) - ($carouselRows * ($carouselImgMargin * 2))) / $carouselRows);
+$carouselImgWidth = (int) (($carouselWidth - ($carouselCollums * ($carouselImgMargin * 2))) / $carouselCollums);
+$carouselCarsToDisplay = [];
+$year = array();
+$make = array();
+$model = array();
+$carouselCarsToDisplayCount;
+$carouselSlideCount;
+$carouselMasterSlideWidth;
+$carouselSlideWidth = $carouselCollums * ($carouselImgWidth + ($carouselImgMargin * 2));
+
+//build list of displayable cars
+
+foreach($this->car_list as $car)
+{
+    if ($car->ImageUrls[0])
+	{
+		$year[] = $car->Year;
+		$make[] = $car->Make;
+		$model[] = $car->Model;
+		$carouselCarsToDisplay[] = $car;
+		
+	}
+}
+shuffle($carouselCarsToDisplay);
+$carouselCarsToDisplayCount = count($carouselCarsToDisplay);
+
+//detemermine number of slides
+if($carouselCarsToDisplayCount % ($carouselRows * $carouselCollums) > 0)
+{
+    $carouselSlideCount = (int) ($carouselCarsToDisplayCount / ($carouselRows * $carouselCollums)) + 1;
+}else
+{
+    $carouselSlideCount = (int) $carouselCarsToDisplayCount / ($carouselRows * $carouselCollums);
+}
+$carouselSlideCount++; //for duplicate slide
+
+//determine master slide width
+$carouselMasterSlideWidth = $carouselSlideCount * (($carouselImgWidth * $carouselCollums) + ($carouselImgMargin * 2));
+$carouselMasterSlideWidth += ($carouselMasterSlideWidth * 0.2);
+
+//construct slides
+
+    //-------------
+    //$carouselWidth = 5000;
+    //-------------
+}
+?>
+<link href="styles.css" rel="stylesheet">
+<div id='carouselContainer' style='height:<?php echo $carouselHeight; ?>px; width:<?php echo $carouselWidth; ?>px; overflow: hidden;'>
+    <div id='carouselMasterSlide' style='width: <?php echo $carouselMasterSlideWidth; ?>px; height: 100%; left: 0px; position: relative;'>
+        <?php
+		
+        for($i = 0; $i < $carouselSlideCount-1; $i++)
+        {
+            ?>
+            <div id='<?php echo 'carouselSlide'.$i; ?>' style='height: 100%; width: <?php echo $carouselSlideWidth; ?>px; float: left;'>
+            <?php
+
+            for($j = $i * ($carouselRows * $carouselCollums); $j < ($i * ($carouselRows * $carouselCollums)) + ($carouselRows * $carouselCollums); $j++) //this loop iterates through the index(s) of $carouselCarsToDisplay for the slide number specified by $i
+            { 
+                //if $j is not too big
+                if($j < $carouselCarsToDisplayCount)
+                {
+                    ?>
+                    <a href='<?php echo $this->generate_detail_url($carouselCarsToDisplay[$j]); ?>' style='height: <?php echo $carouselImgHeight; ?>px; width: <?php echo $carouselImgWidth; ?>px; float: left; margin: <?php echo $carouselImgMargin; ?>px;'><p style="font-size:14px; text-align:center; font-weight: bolder;"><?php echo $carouselCarsToDisplay[$j]->Year;?> &nbsp; <?php echo $carouselCarsToDisplay[$j]->Make;?> </p><p style="font-size:12px; text-align:center; font-weight: bolder;"> <?php  echo $carouselCarsToDisplay[$j]->Model; ?></p>
+                        <img src='<?php echo $carouselCarsToDisplay[$j]->ImageUrls[0]; ?>' style='height:<?php echo $carouselImgHeight; ?>px; width: <?php echo $carouselImgWidth; ?>px;' /><p style="font-size:13px; text-align:center; font-weight: bolder;text-decoration: none;"> $<?php  echo $carouselCarsToDisplay[$j]->Price; ?></p>
+                    </a>  
+                    <?php
+                }
+            }
+            ?>
+            </div>
+            <?php
+        }
+            
+            //if there is more than one slide, output the first slide again as the last slide
+            if($carouselCarsToDisplayCount > ($carouselRows * $carouselCollums))
+            {
+                for($i = 0; $i < 1; $i++) //only loop through once
+                {
+                    ?>
+                    <div id='<?php echo 'carouselSlideDuplicate'; ?>' style='height: 100%; width: <?php echo $carouselSlideWidth; ?>px; display: inline-block;'>
+                    <?php
+
+                    for($j = $i * ($carouselRows * $carouselCollums); $j < ($i * ($carouselRows * $carouselCollums)) + ($carouselRows * $carouselCollums); $j++) //this loop iterates through the index(s) of $carouselCarsToDisplay for the slide number specified by $i
+                    { 
+                        //if $j is not too big
+                        if($j < $carouselCarsToDisplayCount)
+                        {
+                            ?>
+                            <a href='<?php echo $this->generate_detail_url($carouselCarsToDisplay[$j]); ?>' style='height: <?php echo $carouselImgHeight; ?>px; width: <?php echo $carouselImgWidth; ?>px; float: left; margin: <?php echo $carouselImgMargin; ?>px;'><p style="font-size:14px; text-align:center; font-weight: bolder;"><?php echo $carouselCarsToDisplay[$j]->Year;?> &nbsp; <?php echo $carouselCarsToDisplay[$j]->Make;?> </p><p style="font-size:12px; text-align:center; font-weight: bolder;"> <?php  echo $carouselCarsToDisplay[$j]->Model; ?></p>
+                        <img src='<?php echo $carouselCarsToDisplay[$j]->ImageUrls[0]; ?>' style='height:<?php echo $carouselImgHeight; ?>px; width: <?php echo $carouselImgWidth; ?>px;' /><p style="font-size:13px; text-align:center; font-weight: bolder;text-decoration: none;"> $<?php  echo $carouselCarsToDisplay[$j]->Price; ?></p>
+                    </a> 
+                            <?php
+                        }
+                    }
+                    ?>
+                    </div>
+                    <?php
+                }
+            }
+        ?>
+    </div>
+</div>
+
+<script>
+    
+    var carouselCurrentSlide = 0;
+    var carouselSlideCount = <?php echo json_encode($carouselSlideCount); ?>;
+    var carouselSlideWidth = <?php echo json_encode($carouselSlideWidth); ?>;
+    var carouselIntervalSpeed = <?php echo json_encode($carouselIntervalSpeed); ?>;
+    var carouselTransitionSpeed = <?php echo json_encode($carouselTransitionSpeed); ?>;
+    
+    if(carouselSlideCount > 2)
+    {
+        setInterval(function()
+        {
+            if((carouselCurrentSlide + 2) == carouselSlideCount)
+            {
+                jQuery('#carouselMasterSlide').animate({left: '-='+carouselSlideWidth}, carouselTransitionSpeed);
+                jQuery('#carouselMasterSlide').animate({left: '0px'}, 0);
+                carouselCurrentSlide = 0;
+            }else
+            {
+                jQuery('#carouselMasterSlide').animate({left: '-='+carouselSlideWidth}, carouselTransitionSpeed);
+                carouselCurrentSlide++;
+            }
+        },carouselIntervalSpeed);
+    }
+    
+</script>

@@ -1,0 +1,4 @@
+#best{
+height: 28px;
+overflow: hidden;
+}

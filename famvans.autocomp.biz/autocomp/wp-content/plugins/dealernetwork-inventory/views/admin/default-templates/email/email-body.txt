@@ -1,0 +1,12 @@
+<p><a href="mailto:[email-from]">[email-from]</a> sent this vehicle ad to you from <a href="[dealership-website]">[dealership-name]</a>.</p>
+<table>
+<tr><th colspan="2">[car-year] [car-make] [car-model]</th></tr>
+<tr><td><a href="[car-url]"><img src="[car-cover-url]" width="250" alt="Click for details" /></a></td>
+<td>
+<table>
+<tr><th>Mileage:</th><td>[car-mileage]</td></tr>
+<tr><th>Color:</th><td>[car-exterior]</td></tr>
+<tr><th colspan="2"><a href="[car-url]">Click for more details!</a></th></tr>
+</table>
+</td></tr>
+</table>

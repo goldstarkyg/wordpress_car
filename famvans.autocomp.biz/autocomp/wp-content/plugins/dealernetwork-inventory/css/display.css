@@ -1,0 +1,279 @@
+#dn-inv-wrap {width:100%;}
+
+#dn-inv-search {min-height: 40px;}
+
+
+
+#dn-inv-sort .dn-inv-sort {padding-right: 10px; background-repeat: no-repeat; background-position: right center;}
+
+#dn-inv-sort .dn-inv-sort.asc {background-image:url('../images/arrow_up.png');}
+
+#dn-inv-sort .dn-inv-sort.desc {background-image:url('../images/arrow_down.png');}
+
+
+
+/* search tag */
+
+div.tag { border: 1px solid #d9d9d9; -moz-border-radius:2px; -webkit-border-radius:2px; display: inline; padding: 3px 5px; text-decoration:none; background: #f5f5f5; color: #222; margin-left: 5px; margin-bottom:5px;font-family: helvetica;  font-size:13px;}
+
+div.tag:hover {border-color: #b9b9b9;}
+
+div.tag a { font-weight: bold; color: #222; text-decoration:none; font-size: 11px;  } 
+
+.tags_clear { clear: both; width: 100%; height: 0px; }
+
+.not_valid {background: #FBD8DB !important; color: #90111A !important;}
+
+
+
+/* gallery */
+
+.gallery {
+
+width: 98%;
+
+float: left;
+
+*border: solid 2px #0499d8; 
+
+*background: #fff;
+
+border-radius: 5px;
+
+margin-left: 5px;
+
+}
+
+.gallery img{
+
+-webkit-box-sizing: border-box;
+
+-moz-box-sizing: border-box;
+
+box-sizing: border-box;
+
+padding: .618em;
+
+width: 100%;
+
+}
+
+#slideshow img {*width: 630px; *height:471; -webkit-box-sizing: border-box;
+
+-moz-box-sizing: border-box;
+
+box-sizing: border-box;
+
+padding: .618em;
+
+width: 80%;
+
+}
+
+/* gallery thumbs */
+
+ul.thumbs {margin:0!important;*width:630px;} 
+
+ul.thumbs li {list-style:none; margin:0; float:left; opacity:0.4;filter:alpha(opacity=40); width:70px; *height:53px;}
+
+ul.thumbs li.selected {opacity:1;filter:alpha(opacity=100)}
+
+.thumbs { *border: 1px solid #e8e4e3; border-top: 0;}
+
+.thumbs ul{
+
+display: block;
+
+width: 25%;
+
+text-align: center;
+
+-webkit-box-sizing: border-box;
+
+-moz-box-sizing: border-box;
+
+box-sizing: border-box;
+
+float: left;
+
+*border-right: 1px solid #e8e4e3;
+
+width:70px; 
+
+height:53px;
+
+}
+
+/* gallery thumbs pagination */
+
+div.bottom.pagination {text-align:center;}
+
+div.bottom.pagination * {padding-right: 10px;}
+
+/* gallery controls */
+
+#controls {text-align: center; }
+
+#controls div {display:inline;  width: 40px; height: 20px; margin-right: 100px;}
+
+#controls div:last-child {margin-right: 0;}
+
+#controls div ul {text-indent: 100%; white-space: nowrap; overflow: hidden;}
+
+
+
+.dn-car-forms ul {margin: 0!important;}
+
+.dn-car-forms li {list-style: none; margin:0 !important;}
+
+input,textarea {width: 204px;*color:#7c7c7c!important;resize:none;}
+
+.dn-car-forms input[type="submit"] {width: 218px;}
+
+input.required.error,textarea.required.error {border: 1px solid #ff0000;}
+
+.dn-car-forms > div {margin-top:10px;}
+
+
+
+.summary {
+
+width: 48%;
+
+float: right;
+
+}
+
+
+
+
+
+.collapsible {cursor:pointer; background-image:url('../images/collapse.png'); background-repeat:no-repeat; background-position: left center; padding-left: 20px;}
+
+.collapsible.collapsed {background-image: url('../images/expand.png');}
+
+.collapsible.collapsed + div {display: none;}
+
+
+
+#dn-trade #dn-trade-car #dn-trade-car-left { float: left; }
+
+#dn-trade #dn-trade-car #dn-trade-car-left img { width: 150px; }
+
+#dn-trade #dn-trade-car #dn-trade-car-right { float: left; margin-left: 20px; }
+
+#dn-trade #dn-trade-car #dn-trade-car-right h5,p {margin: 0!important;}
+
+
+
+#dn-trade { margin: 0 auto; }
+
+*#dn-trade > div { width: 540px; margin: 0 auto; }
+
+*#dn-trade ul { float: left; margin: 0 25px;}
+
+#dn-trade ul:last-child { margin-right: 0; }
+
+#dn-trade li { list-style:none; margin:0; }
+
+#dn-trade label { display:block; }
+
+#dn-trade select { width: 218px; height: 32px; }
+
+
+
+
+
+/* CUSTOM CSS FROM RICHARD */
+
+#dn-trade { text-align: center; }
+
+#dn-trade > div {
+
+	width: auto !important;
+
+}
+
+
+
+#dn-trade-tradecar > ul {
+
+	float: none !important;
+
+	position: relative !important;
+
+	display: inline-block !important;
+
+	vertical-align: top !important;
+
+}
+
+
+
+#dn-trade-contact > ul {
+
+	float: none !important;
+
+	position: relative !important;
+
+	display: inline-block !important;
+
+	vertical-align: top !important;
+
+}
+
+
+
+#dn-trade-comments > ul {
+
+	float: none !important;
+
+	position: relative !important;
+
+	display: inline-block !important;
+
+	vertical-align: top !important;
+
+}
+
+/* END CUSTOM CSS */
+
+
+
+#dn-trade #dn-trade-tradecar #trade-year { width: 30px; }
+
+#dn-trade #dn-trade-tradecar #trade-make { width: 156px; }
+
+#dn-trade #dn-trade-tradecar #trade-conditioncomments { height: 95px; }
+
+#dn-trade #dn-trade-comments #contact-comments { *width: 475px; }
+
+
+
+/* =Responsive (Mobile) Design
+
+-------------------------------------------------------------- */
+
+@media screen and (max-width: 320px) {
+
+
+
+#controls div {
+
+display: inline;
+
+width: 40px;
+
+height: 20px;
+
+margin-right: 50px;
+
+}
+
+
+
+#controls {*text-align: center; width:15%; }
+
+
+
+}

@@ -1,0 +1,26 @@
+img{
+float: left;margin: 0px 5px 0px 0px;
+}
+
+li.cars{
+min-height: 81px;
+list-style: none;
+}
+
+p{
+font-size: 60;
+}
+
+p.title{
+font-weight: 900;
+}
+
+div.cars{
+min-width: 300px;
+margin-left: -35px;
+}
+
+#dn-inv-pages .pg-normal {
+   cursor: pointer;
+   border: 1px solid #444444;
+}

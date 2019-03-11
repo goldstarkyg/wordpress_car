@@ -1,0 +1,67 @@
+<div>
+[carlist-search]
+</div>
+<div id="dn-inv-right">
+<div id="dn-inv-sort">
+   <div style="float:left;">[carlist-sort]</div>
+   <div style="float:right;">[carlist-rpp]</div>
+   <div style="clear:both;"></div>
+</div>
+<ul><div id="dn-inv-cars row">
+[carlist-loop]
+<li class="cars"><a href="[car-url]"><img class="inventory_img" style="width:107px;height:81px;"  src="[car-cover-url]" title="[car-year] [car-make] [car-model]" alt="[car-year] [car-make] [car-model]" /></a><p class="title">[car-year] [car-make] [car-model]</p><p>[car-images-count] Photos</p><p>
+[if [user-wholesale]]
+            [if [car-wholesaleprice] > 0]
+            Wholesale Price: $[car-wholesaleprice-formatted]
+            [else]
+            [dealership-nopricetext]
+            [/if]
+            [else]
+            [if [car-internetprice] > 0]
+            Internet Price: $[car-internetprice-formatted]
+            [else]
+            [if [car-price] > 0]
+            Asking Price: $[car-price-formatted]
+            [else]
+            [dealership-nopricetext]
+            [/if]
+            [/if]
+            [/if]
+</p></li>
+<br />
+[/carlist-loop]
+</div>
+</ul>
+[if [carlist-count]>[carlist-recordsperpage]]
+<div id="dn-inv-pages"></div>
+[/if]
+</div>
+
+
+--------------css------------
+img{
+float: left;margin: 0px 5px 0px 0px;
+}
+
+li.cars{
+min-height: 81px;
+list-style: none;
+}
+
+p{
+font-size: 60;
+}
+
+p.title{
+font-weight: 900;
+}
+
+div.cars{
+min-width: 300px;
+margin-left: -35px;
+}
+
+#dn-inv-pages .pg-normal {
+   cursor: pointer;
+   border: 1px solid #444444;
+}

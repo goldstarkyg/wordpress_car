@@ -1,0 +1,22 @@
+#dn-inv-left {float: left;width: 720px;}
+#dn-inv-right {float: left; width: 240px;}
+#dn-inv-right > div {border: 1px solid #cccccc; margin-bottom:10px;padding:10px;}
+#dn-inv-right h3, #dn-inv-right h4 {margin: 0;}
+#dn-inv-contactinfo {text-align: center;}
+.ui-widget-header { background:transparent !important; }
+div[id^="tabs-"] { border: 1px solid #aaa !important; }
+.ui-widget-header { border: 0px !important; }
+.ui-widget-content { border: 0px !important; }
+ul.vehicle-info { margin: 1.714285714rem 0; }
+ul.vehicle-info li { list-style: none; }
+ul.vehicle-info span { font-weight: bold; margin-right: 10px; }
+div.vehicle-info { border-bottom: 1px dashed #aaa; }
+
+.vehicle-mpg-holder { float: right; width: 210px; }
+.vehicle-mpg { font-size: 12px; text-align: center; float: left; margin: 1.714285714rem 10px; }
+.vehicle-mpg span { font-size: 20px; font-weight: bold; display: block; }
+.vehicle-mpg.gas-pump { background-image: url('http://www.dealernetwork.com/images/gaspump.png'); width: 25px; height: 37px; }
+.vehicle-mpg-caption { font-size: 10px; text-align: center; }
+
+#vehicle-images { width: 885px; margin: 0 auto; }
+#vehicle-images img { width: 400px; border: 10px solid #efefef; margin: 0 10px; }

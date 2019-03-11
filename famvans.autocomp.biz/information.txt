@@ -1,0 +1,10 @@
+--web site 
+ http://famvans.autocomp.biz
+wp-admin
+username: josh
+password: dealerclick1000
+
+--hosting server   
+http://host42.registrar-servers.com:2082/
+autocomp
+password: dealerclick1000

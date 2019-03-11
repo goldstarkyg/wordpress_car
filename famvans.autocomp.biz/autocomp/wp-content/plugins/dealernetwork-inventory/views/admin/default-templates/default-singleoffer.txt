@@ -1,0 +1,1 @@
+<img src="[car-cover-url]" />[car-year] [car-make] [car-model]

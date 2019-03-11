@@ -1,0 +1,5 @@
+#pop{
+height: 140px;
+width: 250px;
+overflow: hidden;
+}

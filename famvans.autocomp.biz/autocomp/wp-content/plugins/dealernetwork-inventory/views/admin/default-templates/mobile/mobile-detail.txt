@@ -1,0 +1,18 @@
+<h4>[car-year] [car-make] [car-model]</h4>
+<div class="gallery">[car-gallery]</div>
+<p>[car-images-count] Photos</p>
+<ul class="dn-vehicle-info">
+<li><span>Price:</span>
+[if [car-price] > 0]
+$[car-price-formatted]
+[else]
+[dealership-nopricetext]
+[/if]</li>
+<li><span>Mileage:</span>[car-mileage]</li>
+<li><span>Exterior:</span>[car-exterior]</li>
+<li><span>Interior:</span>[car-interior]</li>
+<li><span>VIN:</span>[car-vin]</li>
+<li><span>Stock Number:</span>[car-stocknumber]</li>
+<li><span>Engine:</span>[car-engine]</li>
+<li><span>Transmission:</span>[car-transmission]</li>
+</ul>
